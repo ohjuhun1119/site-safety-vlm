@@ -1,0 +1,28 @@
+[project]
+name = "site-safety-vlm"
+version = "0.0.1"
+description = "PPE and unsafe-behavior judgement with LoRA/QLoRA-tuned VLMs, compared across fixed pipeline / single agent / multi-agent"
+requires-python = ">=3.11"
+# 버전은 설치 후 동작을 확인하고 고정한다 (pip freeze 결과를 docs/experiments.md에 기록)
+dependencies = [
+  "mlx-vlm[train]",
+  "pydantic",
+  "pyyaml",
+  "pillow",
+  "opencv-python",
+  "imagehash",
+  "huggingface_hub",
+  "langgraph",
+  "chromadb",
+  "langfuse",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

@@ -1,0 +1,4 @@
+# 구역별 필수 장비 — 실제 현장 기준이 아니라 가정값이다 (README에 명시).
+default_zone:
+  required_ppe: [helmet, vest]
+zones: {}

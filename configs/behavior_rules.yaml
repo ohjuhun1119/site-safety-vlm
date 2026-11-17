@@ -1,0 +1,10 @@
+# 행동 클래스 → 규정 검색어 매핑 — 가정값이다 (README에 명시).
+# 클래스 이름은 데이터를 내려받아 확인한 뒤 채운다. 아래 키는 검색에서 본 불안전 클래스 이름이다.
+Safe Walkway Violation:
+  query: 통로 안전
+Unauthorized Intervention:
+  query: 작업 중 접근 금지
+Opened Panel Cover:
+  query: 전기 기계 설비 덮개
+Carrying Overload with Forklift:
+  query: 지게차 적재 하중

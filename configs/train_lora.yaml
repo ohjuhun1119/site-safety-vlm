@@ -1,0 +1,15 @@
+# PPE 판정(이미지) lora 학습. 값은 mlx-vlm 문서 예시를 시작점으로 둔 것이며 소량 학습으로 조정한다.
+model: mlx-community/Qwen2.5-VL-3B-Instruct-4bit
+data: data/processed/ppe
+algorithm: sft
+train_on_completions: true
+train_type: lora
+quantization_bits: null       # QLoRA 방식은 4비트 위에서 학습
+lora_rank: 8
+lora_alpha: 16
+train_vision: false          # true면 비전 타워 · 프로젝터도 학습
+batch_size: 1
+gradient_accumulation_steps: 4
+learning_rate: 1.0e-4
+iters: 100                   # TODO: 개발용 지표로 정한다
+adapter_file: adapters/ppe_lora/weights.safetensors

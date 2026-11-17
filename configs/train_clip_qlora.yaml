@@ -1,0 +1,19 @@
+# 불안전 행동 분류(영상 클립) qlora 학습. 영상 입력 학습 지원은 scripts/smoke_clip_train.sh로 먼저 확인한다.
+model: mlx-community/Qwen2.5-VL-3B-Instruct-4bit
+data: data/processed/clip
+algorithm: sft
+train_on_completions: true
+train_type: lora
+quantization_bits: 4
+lora_rank: 8
+lora_alpha: 16
+train_vision: false
+batch_size: 1
+gradient_accumulation_steps: 4
+learning_rate: 1.0e-4
+iters: 100                   # TODO
+clip:
+  fps: null                  # TODO: 1 / 2 / 3 비교
+  max_pixels: null           # TODO
+  max_seq_length: null       # TODO: 영상 행은 잘라낼 수 없고 넘으면 에러가 난다
+adapter_file: adapters/clip_qlora/weights.safetensors
