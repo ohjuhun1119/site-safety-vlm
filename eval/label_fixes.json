@@ -103,5 +103,26 @@
   "unclear": 0,
   "note": "사람 1명인데 조끼 박스가 헬멧 위치에 잘못 그려져 작업자 2로 셈",
   "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/gettyimages-183868757-612x612_jpg.rf.d501a598b8b8699e62937c051a12aa1f.jpg": {
+  "no_vest": 1,
+  "note": "가운데 사람과 오른쪽 큰 얼굴의 사람이 형광 조끼를 입었음. 조끼 미착용은 왼쪽 한 명으로 보임",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/gettyimages-477819050-612x612_jpg.rf.5009c6faac5321b52d4b9c4225e5305e.jpg": {
+  "workers": 2,
+  "note": "헬멧과 조끼를 입은 사람이 2명인데 person 박스는 1개",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/ppe_0199_jpg.rf.58d5ce013e12684b377299e039640562.jpg": {
+  "workers": 3,
+  "no_vest": 3,
+  "note": "헬멧 쓴 사람이 3명(왼쪽, 가운데, 오른쪽 뒷모습)인데 person 박스는 2개. 조끼는 보이지 않음",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/ppe_0839_jpg.rf.62a15e7cc8a876210f7c8f7dfecbed22.jpg": {
+  "no_vest": 0,
+  "note": "세 사람 모두 형광 조끼를 입었음(왼쪽 사람 포함). 확신 중간",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
  }
 }
