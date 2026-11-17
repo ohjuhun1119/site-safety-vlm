@@ -1,5 +1,7 @@
 """판정 JSON 스키마. VLM 출력은 반드시 이 스키마로 검증한다."""
 
+from typing import Literal
+
 from pydantic import BaseModel, Field, model_validator
 
 
@@ -18,12 +20,29 @@ class PPEJudgement(BaseModel):
         return self
 
 
+# Safe and Unsafe Behaviours samples.json의 라벨 691개 전부에서 확인한 8클래스 (2026-11-17).
+# 안전 / 불안전 구분은 데이터셋 카드 기준이며 파일명 앞 숫자(0-7)는 클래스 인덱스와 1:1로 일치한다.
+UNSAFE_BEHAVIORS = (
+    "Safe Walkway Violation",
+    "Unauthorized Intervention",
+    "Opened Panel Cover",
+    "Carrying Overload with Forklift",
+)
+SAFE_BEHAVIORS = ("Safe Walkway", "Authorized Intervention", "Closed Panel Cover", "Safe Carrying")
+Behavior = Literal[
+    "Safe Walkway Violation",
+    "Unauthorized Intervention",
+    "Opened Panel Cover",
+    "Carrying Overload with Forklift",
+    "Safe Walkway",
+    "Authorized Intervention",
+    "Closed Panel Cover",
+    "Safe Carrying",
+]
+
+
 class BehaviorJudgement(BaseModel):
-    """영상 클립 1개에 대한 행동 판정.
+    """영상 클립 1개에 대한 행동 판정. behavior는 8클래스 중 하나."""
 
-    TODO: 데이터(Safe and Unsafe Behaviours)를 내려받아 실제 클래스 이름을 확인한 뒤
-    behavior를 Literal[...]로 제한한다. 지금은 문자열로 받는다.
-    """
-
-    behavior: str = Field(min_length=1)
+    behavior: Behavior
     unsafe: bool

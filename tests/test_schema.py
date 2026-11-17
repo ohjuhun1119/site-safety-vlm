@@ -1,7 +1,7 @@
 import pytest
 from pydantic import ValidationError
 
-from sitesafe.vision.schema import BehaviorJudgement, PPEJudgement
+from sitesafe.vision.schema import SAFE_BEHAVIORS, UNSAFE_BEHAVIORS, BehaviorJudgement, PPEJudgement
 
 
 def test_ppe_valid():
@@ -21,5 +21,18 @@ def test_ppe_rejects_negative():
 
 def test_behavior_requires_fields():
     with pytest.raises(ValidationError):
-        BehaviorJudgement.model_validate({"behavior": "x"})
-    assert BehaviorJudgement.model_validate({"behavior": "x", "unsafe": False}).unsafe is False
+        BehaviorJudgement.model_validate({"behavior": "Safe Walkway"})
+    assert BehaviorJudgement.model_validate({"behavior": "Safe Walkway", "unsafe": False}).unsafe is False
+
+
+def test_behavior_rejects_unknown_class():
+    with pytest.raises(ValidationError):
+        BehaviorJudgement.model_validate({"behavior": "x", "unsafe": False})
+
+
+def test_behavior_constants_match_literal():
+    from typing import get_args
+
+    from sitesafe.vision.schema import Behavior
+
+    assert set(get_args(Behavior)) == set(UNSAFE_BEHAVIORS) | set(SAFE_BEHAVIORS)
