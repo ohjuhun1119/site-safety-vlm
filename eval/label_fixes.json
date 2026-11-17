@@ -60,5 +60,48 @@
   "no_vest": 1,
   "note": "오른쪽 사람의 형광 조끼 박스가 없음",
   "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/000240_jpg.rf.0b240cbf834bb8178f6355b21ab71679.jpg": {
+  "workers": 1,
+  "no_vest": 1,
+  "note": "목 아래 데님 재킷이 보이고 조끼는 없음. person 박스가 없어 작업자 0으로 셈",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/gettyimages-1047616456-612x612_jpg.rf.cfa9491be224292aa9abeb996d45e016.jpg": {
+  "workers": 2,
+  "note": "헬멧 쓴 사람 2명인데 person 박스가 없어 작업자 0으로 셈",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/gettyimages-599143072-612x612_jpg.rf.f566ad05da9f243db30976ee421a3060.jpg": {
+  "workers": 2,
+  "note": "사람 2명인데 person 박스가 없어 작업자 0으로 셈",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/ppe_0062_jpg.rf.a1b17cfce5519ddfe9e60ade77ee4b1c.jpg": {
+  "workers": 1,
+  "note": "헬멧 쓴 사람 1명인데 person 박스가 없어 작업자 0으로 셈. 조끼 여부는 보이지 않아 그대로 둠",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/ppe_0742_jpg.rf.b1dc7949a57decb0f115ebe5f207231a.jpg": {
+  "no_helmet": 1,
+  "unclear": 0,
+  "note": "가운데 사람은 맨머리인데 머리 라벨이 없음",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/roboflow_safety/test/000934_jpg.rf.f22db960609e6406dc8b2c7ef44696f3.jpg": {
+  "no_vest": 10,
+  "note": "조끼 입은 사람이 없는데 No_Vest 박스가 2개 빠짐. 확신 중간",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/roboflow_safety/test/001133_jpg.rf.179078d394f3802006d067bd49a581cc.jpg": {
+  "no_vest": 10,
+  "note": "조끼 입은 사람이 없는데 No_Vest 박스가 3개 빠짐. 확신 중간",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/roboflow_safety/test/001307_jpg.rf.818da4032241d1ef8d5002cb3452ac81.jpg": {
+  "workers": 1,
+  "unclear": 0,
+  "note": "사람 1명인데 조끼 박스가 헬멧 위치에 잘못 그려져 작업자 2로 셈",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
  }
 }
