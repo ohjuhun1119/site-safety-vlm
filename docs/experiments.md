@@ -6,8 +6,12 @@
 
 | 날짜 | 항목 | 결과 | 메모 |
 | --- | --- | --- | --- |
-| | mlx-vlm 버전 / 모델 | | |
-| | 영상 입력 학습 스모크 테스트 (`scripts/smoke_clip_train.sh`) | | 에러 여부, `train_num_vision_tokens` 값 |
+| 2026-11-17 | 환경 설치 | Python 3.12.14, `pip install -e ".[dev]"` 성공 | 시스템 기본 Python은 3.14.6이라 3.12로 `.venv` 생성. mlx-vlm 0.8.0, mlx 0.32.4, transformers 5.23.0. 버전 고정(pip freeze)은 아직 안 함 |
+| 2026-11-17 | `pytest` | 7개 통과 | `tests/test_build_dataset.py` 3개, `tests/test_schema.py` 4개 |
+| 2026-11-17 | mlx-vlm 이미지 추론 | 성공 | `python -m mlx_vlm generate --model mlx-community/Qwen2.5-VL-3B-Instruct-4bit --image ... --max-tokens 80`. 입력은 Pillow로 만든 합성 이미지(448x448, 노란 모자 + 주황 몸통 도형). 답변이 도형 색을 맞게 묘사함. 모델 가중치 약 1.6GB 다운로드에 16분 걸려 추론 시간은 따로 재지 않음. 현장 데이터 정확도와 무관 |
+| 2026-11-17 | mlx-vlm 영상 입력 추론 | 에러 없이 실행됨 | `python -m mlx_vlm generate --video ... --fps 2 --max-tokens 80`. 입력은 OpenCV로 만든 합성 mp4(448x448, 8fps, 32프레임, 도형이 오른쪽으로 이동). 답변은 도형의 색을 묘사했고 움직임은 언급하지 않음. 전체 약 3초(모델 캐시됨). `generate_video`는 영상 *생성*용 명령이라 영상 입력에는 쓰지 않음. 프레임이 실제로 비전 토큰으로 들어갔는지는 아직 확인 못 함(추론 로그 미확인) |
+| 2026-11-17 | 영상 입력 학습 스모크 테스트 (`scripts/smoke_clip_train.sh`) 1차 | 에러 없이 종료, 그러나 영상은 학습에 안 들어감 | `train_num_vision_tokens=0`, 시퀀스 평균 44토큰. user content가 일반 문자열이라 프롬프트에 영상 자리표시가 없었음. `VisionDataset`은 `pixel_values_videos`·`video_grid_thw`는 만들지만 `input_ids`에 영상 토큰이 0개(`{"type":"video"}` 구조로 바꿔도 동일). 에러 없이 끝나므로 `train_num_vision_tokens`를 꼭 봐야 함 |
+| 2026-11-17 | 영상 입력 학습 스모크 테스트 2차 (자리표시 추가) | 영상 입력 학습 동작 확인 | user content 앞에 `<|vision_start|><|video_pad|><|vision_end|>`를 넣음. `train_num_vision_tokens=1,440`(5시퀀스 × 288), 시퀀스 평균 334토큰, `peak_memory=6.70`(mlx-vlm 로그 값, 단위 미확인), 5 iter 약 6초, loss 3.69. 입력은 합성 클립 3개(336x336, 4fps, 8프레임), 모델 `mlx-community/Qwen2.5-VL-3B-Instruct-4bit`, batch 1, LoRA(학습 파라미터 14.97M, 0.399%). **이 값들은 파이프라인 점검용이며 정확도·성능 근거가 아님.** 영상 클립 입력(프레임 묶음 아님)으로 학습됨. 실제 1080p 클립의 해상도·fps·프레임 수 조건에서의 메모리는 미측정 |
 
 ## 1. zero-shot baseline
 

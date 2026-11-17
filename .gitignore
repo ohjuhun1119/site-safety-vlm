@@ -24,3 +24,5 @@ __pycache__/
 # 기타
 .DS_Store
 wandb/
+
+*.egg-info/
