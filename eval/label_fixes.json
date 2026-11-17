@@ -1,0 +1,64 @@
+{
+ "data/raw/roboflow_safety/test/001452_jpg.rf.e0de542c35cac11036a0f7bcb1fa434a.jpg": {
+  "no_vest": 6,
+  "note": "같은 사진의 CHVG와 비교: 맨 왼쪽 사람의 No_Vest 박스가 빠짐",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/roboflow_safety/train/bpart2_000439_jpg.rf.35254711d96de46e34c9040983f69124.jpg": {
+  "no_vest": 1,
+  "note": "No_Vest 박스가 하나만 보임(검은 티 입은 사람). 2개로 세어진 것은 중복 박스로 보임",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/ppe_0031_jpg.rf.6cc63916301578c41839251a99381916.jpg": {
+  "no_vest": 0,
+  "note": "주황 조끼를 입었는데 조끼 박스가 없음",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/ppe_0215_jpg.rf.5b27f2f98433f80810a34b3da6278e83.jpg": {
+  "workers": 1,
+  "note": "person 박스가 없어 작업자 0으로 셈. 헬멧 · 조끼를 입은 사람 1명",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/ppe_0587_jpg.rf.153c2bcb3574c05c9b45172ebb579da8.jpg": {
+  "no_vest": 1,
+  "note": "오른쪽 파란 작업복 작업자는 조끼를 입지 않음(Roboflow가 No_Vest로 표시)",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/ppe_0745_jpg.rf.197b92819d51b469f073c8947b5db93f.jpg": {
+  "no_helmet": 1,
+  "unclear": 0,
+  "note": "오른쪽 사람의 맨머리가 보임(Roboflow가 No-Helmet으로 표시)",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/ppe_0878_jpg.rf.0771ba8349700968dd61da590fd9279d.jpg": {
+  "no_vest": 0,
+  "note": "멀리 있는 작업자가 노란 조끼를 입었으나 조끼 박스가 없음",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/ppe_0900_jpg.rf.6d22cc9397db4c747ccf23aa45db3cc5.jpg": {
+  "no_vest": 0,
+  "note": "작은 작업자 3명 모두 노란 조끼로 보임. 확신 낮음",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/ppe_0938_jpg.rf.81868ab98f9c017413416840516488da.jpg": {
+  "workers": 3,
+  "note": "사람 3명인데 person 박스는 2개",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/ppe_0239_jpg.rf.9a928a7ea205393e14a717390565f935.jpg": {
+  "no_helmet": 2,
+  "unclear": 0,
+  "note": "헬멧 라벨이 없는 사람 중 2명은 맨머리가 보임",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/gettyimages-1054724872-612x612_jpg.rf.9c42451a805058b4a2f1fb74533a93b6.jpg": {
+  "no_vest": 0,
+  "note": "셔츠 밑에 형광 조끼가 보임. 헬멧 유무는 판단 못 함",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ },
+ "data/raw/chvg/extracted/CHVG-Dataset/gettyimages-149319752-612x612_jpg.rf.cbe8261f31e93c599daa54cc72eca020.jpg": {
+  "no_vest": 1,
+  "note": "오른쪽 사람의 형광 조끼 박스가 없음",
+  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+ }
+}
