@@ -50,6 +50,8 @@
 | 날짜 | 방식 | 결과 | 메모 |
 | --- | --- | --- | --- |
 | 2026-11-17 | pHash(해밍거리 4 이하) 연결 요소로 그룹을 묶고 그룹 단위로 8:1:1 분할, seed 0 (`sitesafe.data.split`) | 이미지 3,922장, 그룹 3,380개(한 그룹 최대 10장). train 3,138 / valid 392 / test 392. 분할 간 겹침 0장 | 출처·카메라 정보가 없어 이미지 그룹 단위가 한계. 중복은 지우지 않고 같은 분할에 같이 둠(중복 제거 여부는 미정). 라벨 체계(CHVG와 Roboflow)는 아직 통합 안 함. 클래스 분포와 라벨 의미는 미점검이라 분할은 클래스 비율을 맞추지 않음. manifest는 `data/processed/ppe_split.json`(git 제외). valid·test는 이 시점에 고정 |
+| 2026-11-17 | 라벨 체계 통합 (`sitesafe.data.normalize`): 통일 클래스 person / helmet / vest / no_helmet / no_vest | 3,922장 변환. 박스 수 helmet 6,206 · vest 4,803 · person 4,674 · no_helmet 3,413 · no_vest 2,606, CHVG의 glass 532개는 버림. 결과 `data/processed/ppe_boxes.jsonl`(git 제외) | **출처마다 주석 범위가 다름**: CHVG에는 no_vest가, Roboflow에는 person이 없음. 이미지마다 `annotated`(주석 대상 클래스)를 같이 저장해 "0개"와 "주석 없음"을 구분. 매핑 검증: 두 데이터에 같은 사진 1:1 쌍 255개에서 안전모 수 일치 87%, 맨머리 수 93%, 조끼 수 89%, CHVG person-vest 겹침으로 유도한 미착용 조끼 수와 Roboflow No_Vest 수 일치 86%(겹침 임계 0.7, 임의 선택). 불일치는 Roboflow가 박스를 더 다는 경향(맨머리 195 vs 170)이며 어느 쪽이 맞는지는 판단 안 함. 변환 라벨 오류율은 100장 점검 전이라 미측정 |
+
 
 ## 6. 계획 변경: SteelBench 제외
 
