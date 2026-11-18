@@ -21,8 +21,9 @@
  },
  "data/raw/chvg/extracted/CHVG-Dataset/ppe_0587_jpg.rf.153c2bcb3574c05c9b45172ebb579da8.jpg": {
   "no_vest": 1,
-  "note": "오른쪽 파란 작업복 작업자는 조끼를 입지 않음(Roboflow가 No_Vest로 표시)",
-  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+  "note": "오른쪽 파란 작업복 작업자는 조끼를 입지 않음(Roboflow가 No_Vest로 표시) / 사람 확인으로 정정(2026-11-18): {'unclear': 0} (Claude 값 {'unclear': None})",
+  "reviewer": "사람 확인 2026-11-18 (사용자가 확인 시트로 점검)",
+  "unclear": 0
  },
  "data/raw/chvg/extracted/CHVG-Dataset/ppe_0745_jpg.rf.197b92819d51b469f073c8947b5db93f.jpg": {
   "no_helmet": 1,
@@ -32,8 +33,9 @@
  },
  "data/raw/chvg/extracted/CHVG-Dataset/ppe_0878_jpg.rf.0771ba8349700968dd61da590fd9279d.jpg": {
   "no_vest": 0,
-  "note": "멀리 있는 작업자가 노란 조끼를 입었으나 조끼 박스가 없음",
-  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+  "note": "멀리 있는 작업자가 노란 조끼를 입었으나 조끼 박스가 없음 / 사람 확인으로 정정(2026-11-18): {'unclear': 1} (Claude 값 {'unclear': None})",
+  "reviewer": "사람 확인 2026-11-18 (사용자가 확인 시트로 점검)",
+  "unclear": 1
  },
  "data/raw/chvg/extracted/CHVG-Dataset/ppe_0900_jpg.rf.6d22cc9397db4c747ccf23aa45db3cc5.jpg": {
   "no_vest": 0,
@@ -46,10 +48,11 @@
   "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
  },
  "data/raw/chvg/extracted/CHVG-Dataset/ppe_0239_jpg.rf.9a928a7ea205393e14a717390565f935.jpg": {
-  "no_helmet": 2,
-  "unclear": 0,
-  "note": "헬멧 라벨이 없는 사람 중 2명은 맨머리가 보임",
-  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+  "no_helmet": 0,
+  "unclear": 1,
+  "note": "헬멧 라벨이 없는 사람 중 2명은 맨머리가 보임 / 사람 확인으로 정정(2026-11-18): {'no_helmet': 0, 'no_vest': 6, 'unclear': 1} (Claude 값 {'no_helmet': 2, 'no_vest': None, 'unclear': 0})",
+  "reviewer": "사람 확인 2026-11-18 (사용자가 확인 시트로 점검)",
+  "no_vest": 6
  },
  "data/raw/chvg/extracted/CHVG-Dataset/gettyimages-1054724872-612x612_jpg.rf.9c42451a805058b4a2f1fb74533a93b6.jpg": {
   "no_vest": 0,
@@ -57,9 +60,9 @@
   "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
  },
  "data/raw/chvg/extracted/CHVG-Dataset/gettyimages-149319752-612x612_jpg.rf.cbe8261f31e93c599daa54cc72eca020.jpg": {
-  "no_vest": 1,
-  "note": "오른쪽 사람의 형광 조끼 박스가 없음",
-  "reviewer": "claude 2026-11-17 (사람 재확인 필요)"
+  "no_vest": 0,
+  "note": "오른쪽 사람의 형광 조끼 박스가 없음 / 사람 확인으로 정정(2026-11-18): {'no_vest': 0} (Claude 값 {'no_vest': 1})",
+  "reviewer": "사람 확인 2026-11-18 (사용자가 확인 시트로 점검)"
  },
  "data/raw/chvg/extracted/CHVG-Dataset/000240_jpg.rf.0b240cbf834bb8178f6355b21ab71679.jpg": {
   "workers": 1,
