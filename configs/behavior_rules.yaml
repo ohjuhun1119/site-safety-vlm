@@ -1,10 +1,16 @@
-# 행동 클래스 → 규정 검색어 매핑 — 가정값이다 (README에 명시).
-# 키는 samples.json 라벨 691개 전부에서 확인한 불안전 4클래스 이름이다. 검색어는 가정값이다.
+# 행동 클래스 → 규정 검색어 · 후보 조문 매핑 — 가정값이다 (README에 명시).
+# 키는 samples.json 라벨 691개 전부에서 확인한 불안전 4클래스 이름이다.
+# articles는 data/rules/산업안전보건기준규칙_발췌.md에 실제로 있는 조문 중 내용이 가까워 보이는 후보이며,
+# 영상 라벨과 조문의 대응은 사람이 확정한 것이 아니다.
 Safe Walkway Violation:
   query: 통로 안전
+  articles: [제22조, 제172조]
 Unauthorized Intervention:
   query: 작업 중 접근 금지
+  articles: [제20조, 제92조, 제172조]
 Opened Panel Cover:
   query: 전기 기계 설비 덮개
+  articles: [제301조]
 Carrying Overload with Forklift:
   query: 지게차 적재 하중
+  articles: [제173조, 제178조]
